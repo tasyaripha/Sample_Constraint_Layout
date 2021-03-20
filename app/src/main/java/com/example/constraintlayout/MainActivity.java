@@ -20,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnLogin=findViewById(R.id.btSignin);
-        edemail=findViewById(R.id.edEmail);
-        edpassword=findViewById(R.id.edPassword);
+        btnLogin = findViewById(R.id.btSignin);
+        edemail = findViewById(R.id.edEmail);
+        edpassword = findViewById(R.id.edPassword);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,12 +30,31 @@ public class MainActivity extends AppCompatActivity {
                 nama = edemail.getText().toString();
                 password = edpassword.getText().toString();
 
-                if (nama.equals("naa@gmail.com") && password.equals("123")) {
+                String email = "naa@gmail.com";
+                String pass = "123";
+
+                if (nama.equals(email) && password.equals(pass)) {
                     Toast t = Toast.makeText(getApplicationContext(),
-                            "email dan password benar", Toast.LENGTH_LONG);
+                            "Login Sukses", Toast.LENGTH_LONG);
                     t.show();
 
-                } else if (!nama.equals("naa@gmail.com") && password.equals("123")) {
+                    Bundle b = new Bundle();
+
+                    b.putString("a", nama.trim());
+                    b.putString("b", password.trim());
+
+                    Intent i = new Intent(getApplicationContext(), ActivityHasil.class);
+
+                    i.putExtras(b);
+
+                    startActivity(i);
+                } else {
+                    Toast t = Toast.makeText(getApplicationContext(),
+                            "Login Gagal", Toast.LENGTH_LONG);
+                    t.show();
+
+
+               /* } else if (!nama.equals("naa@gmail.com") && password.equals("123")) {
                     Toast t = Toast.makeText(getApplicationContext(),
                             "email salah", Toast.LENGTH_LONG);
                     t.show();
@@ -47,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast t = Toast.makeText(getApplicationContext(),
                             "email dan password salah", Toast.LENGTH_LONG);
                     t.show();
+                }*/
                 }
             }
         });
