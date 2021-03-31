@@ -21,37 +21,37 @@ public class FormPendaftaran extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_pendaftaran);
 
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (edNama.getText().toString().isEmpty() ||
-//                        edAlamat.getText().toString().isEmpty() ||
-//                        edEmail.getText().toString().isEmpty() ||
-//                        edPassword.getText().toString().isEmpty() ||
-//                        edrepass.getText().toString().isEmpty())
-//
-//                {
-//                    Snackbar.make(view, "Wajib isi seluruh data !!!", Snackbar.LENGTH_LONG).show();
-//                }
-//                else
-//                {
-//                    if (edPassword.getText().toString().equals(edrepass.getText().toString()))
-//                    {
-//                        Toast.makeText(getApplicationContext(), "Pendaftaran Berhasil...",
-//                                Toast.LENGTH_SHORT).show();
-//
-//                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
-//                        startActivity(i);
-//                    }
-//                    else
-//                    {
-//                        Snackbar.make(view, "Password dan Repassword harus sama!!!!",
-//                                Snackbar.LENGTH_LONG).show();
-//                    }
-//                }
-//            }
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (edNama.getText().toString().isEmpty() ||
+                        edAlamat.getText().toString().isEmpty() ||
+                        edEmail.getText().toString().isEmpty() ||
+                        edPassword.getText().toString().isEmpty() ||
+                        edrepass.getText().toString().isEmpty())
 
-//        });
+                {
+                    Snackbar.make(v, "Wajib isi seluruh data !!!", Snackbar.LENGTH_LONG).show();
+                }
+                else
+                {
+                    if (edPassword.getText().toString().equals(edrepass.getText().toString()))
+                    {
+                        Toast.makeText(getApplicationContext(), "Pendaftaran Berhasil...",
+                                Toast.LENGTH_SHORT).show();
+
+                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(i);
+                    }
+                    else
+                    {
+                        Snackbar.make(v, "Password dan Repassword harus sama!!!!",
+                                Snackbar.LENGTH_LONG).show();
+                    }
+                }
+            }
+
+        });
     }
 
 
